@@ -32,4 +32,14 @@ while is_game_on:
         score_board.clear()
         score_board.score_count()
         snake.extension()
+        print(snake.head.xcor())
+    if snake.head.ycor() > 298 or snake.head.ycor() < -298 or snake.head.xcor() > 298 or snake.head.xcor() < -298:
+        is_game_on = False
+
+    for index in range(len(snake.segment_list) - 1, 2, -1):
+        if snake.head.distance(snake.segment_list[index]) < 10:
+            is_game_on = False
+
+score_board.goto((0, 0))
+score_board.game_over()
 screen.exitonclick()

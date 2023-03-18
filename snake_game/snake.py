@@ -34,7 +34,7 @@ class Snake:
 
     def move(self):
         for seg_num in range(len(self.segment_list)-1, 0, -1):
-            print(seg_num)
+            # print(seg_num)
             xc = self.segment_list[seg_num - 1].xcor()
             yc = self.segment_list[seg_num - 1].ycor()
 
@@ -43,7 +43,7 @@ class Snake:
 
         # Move the head 20 px forward , so that rest of segment follows the head
         self.head.forward(MOVE_DISTANCE)
-        print('counter: ', self.counter)
+        # print('counter: ', self.counter)
 
     def extension(self):
         new_segment = Turtle('square')
